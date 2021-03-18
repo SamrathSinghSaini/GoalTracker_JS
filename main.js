@@ -48,6 +48,13 @@ deleteButton.innerHTML = 'Delete Goal';
         list1.removeChild(newLi);
     }
 
+    //audio function 
+    let playAudio = new Audio('sound.mp3')
+    function a (){
+        playAudio.play();
+    }
+    a();
+
     
    
 }

@@ -49,7 +49,7 @@ deleteButton.innerHTML = 'Delete Goal';
     }
 
     //audio function 
-    let playAudio = new Audio('sound.mp3')
+    let playAudio = new Audio('mario.wav')
     function a (){
         playAudio.play();
     }

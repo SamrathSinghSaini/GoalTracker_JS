@@ -27,7 +27,12 @@ deleteButton.innerHTML = 'Delete Goal';
 //appending the buttons to the list items 
     newLi.appendChild(completeButton); 
     newLi.appendChild(deleteButton); 
-
+ //audio function 
+ let playAudio = new Audio('mario.wav')
+ function a (){
+     playAudio.play();
+ }
+ a();
 //function for completing goals
     completeButton.onclick = function()
     {
@@ -50,12 +55,6 @@ deleteButton.innerHTML = 'Delete Goal';
         a(); 
     }
 
-    //audio function 
-    let playAudio = new Audio('mario.wav')
-    function a (){
-        playAudio.play();
-    }
-    a();
 
     
    

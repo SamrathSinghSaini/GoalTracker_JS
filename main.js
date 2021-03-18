@@ -40,12 +40,14 @@ deleteButton.innerHTML = 'Delete Goal';
         list2.appendChild(list2Item); 
         list2.appendChild(goalText);
         list1.removeChild(newLi);
+        a();
 
     }
 //function for deleting goals 
     deleteButton.onclick = function()
     {
         list1.removeChild(newLi);
+        a(); 
     }
 
     //audio function 

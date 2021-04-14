@@ -27,12 +27,50 @@ deleteButton.innerHTML = 'Delete Goal';
 //appending the buttons to the list items 
     newLi.appendChild(completeButton); 
     newLi.appendChild(deleteButton); 
+
+    //Adding random images to the goals by fetching images from the 'lorem Picsum' API of random images 
+
+   //Counting number of list items
+    let numberOfTasks = document.getElementById('list1').childElementCount; 
+//function to add images
+   function image(){
+
+        let randomImage = document.createElement('img');
+        
+    randomImage.src = "https://picsum.photos/100/?random&rnd"+new Date().getTime()+")";
+
+    newLi.appendChild(randomImage);
+ 
+}
+image();
+    
  //audio function 
  let playAudio = new Audio('mario.wav')
  function a (){
      playAudio.play();
  }
- a();
+//Using speech synthesis of the web speech API we make the browser read aloud the number of tasks we have to complete. 
+// let numberOfTasks = document.getElementById('list1').childElementCount; 
+function speechTasks(){
+    let speechVar;
+    if(numberOfTasks === 1){
+        // Speech var is the speech request which is populated with the content to the read aloud or spoken
+        speechVar = new SpeechSynthesisUtterance('you have ' + numberOfTasks + 'task today.')
+        //this is the entry point for the Speech API and the .speak method makes or calls the speech request 
+        window.speechSynthesis.speak(speechVar);
+    }
+    else if(numberOfTasks > 1){
+        speechVar = new SpeechSynthesisUtterance('you have ' + numberOfTasks + 'tasks today.')
+        window.speechSynthesis.speak(speechVar);
+       
+    }
+
+    
+}
+speechTasks();
+ 
+
+// a();
 //function for completing goals
     completeButton.onclick = function()
     {
